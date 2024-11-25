@@ -1,0 +1,36 @@
+<div class="view-student-card">
+  <h2>Student Details</h2>
+
+  <div *ngIf="student; else noStudentFound">
+    <div class="student-card">
+      <p><strong>Name:</strong> {{ student.name }}</p>
+      <p><strong>Seat No:</strong> {{ student.seatNo }}</p>
+      <p><strong>College:</strong> {{ student.college }}</p>
+      <p><strong>Course:</strong> {{ student.course }}</p>
+      <p><strong>Center:</strong> {{ student.center }}</p>
+      <p><strong>Perm Reg No:</strong> {{ student.permRegNo }}</p>
+      <p><strong>Mother's Name:</strong> {{ student.motherName }}</p>
+
+      <h3>Marks</h3>
+      <div *ngIf="student.marklist && student.marklist.length > 0">
+        <div *ngFor="let mark of student.marklist" class="mark-details">
+          <p><strong>Subject:</strong> {{ mark.subjectName }}</p>
+          <p><strong>Internal Marks:</strong> {{ mark.internalMarks }}</p>
+          <p><strong>External Marks:</strong> {{ mark.externalMarks }}</p>
+          <p><strong>Total Marks:</strong> {{ mark.totalMarks }}</p>
+        </div>
+      </div>
+      <div *ngIf="!student.marklist || student.marklist.length === 0">
+        <p>No marks available for this student.</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noStudentFound>
+    <p>{{ errorMessage }}</p>
+  </ng-template>
+
+  <div *ngIf="successMessage" class="success-message">
+    <p>{{ successMessage }}</p>
+  </div>
+</div>

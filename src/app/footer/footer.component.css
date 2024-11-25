@@ -1,0 +1,113 @@
+/* General Body and HTML Styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Styling */
+.footer {
+  /* background-color:rgba(13, 13, 13, 0.85);    */
+  background-color:black;
+  color: #ECF0F1; /* Light text for contrast */
+  padding: 15px 20px;
+  text-align: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.footer .footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 250px; /* Ensure proper alignment for smaller screens */
+}
+
+.footer-left h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #F39C12; /* Highlighted text color */
+}
+
+.footer-left p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-center h5, .footer-right h5 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #F39C12;
+}
+
+/* Footer Links */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin: 8px 0;
+}
+
+.footer ul li a {
+  color: #ECF0F1;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #F39C12; /* Gold hover effect */
+}
+
+.footer ul li a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Footer Social Icons */
+.footer-right ul.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-right ul.social-links li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right ul.social-links li a i {
+  font-size: 1.5rem; /* Slightly larger for emphasis */
+  margin-right: 8px;
+  color: #ECF0F1;
+}
+
+.footer-right ul.social-links li a:hover i {
+  color: #F39C12;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    text-align: center;
+  }
+}

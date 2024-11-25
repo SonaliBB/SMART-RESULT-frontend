@@ -1,0 +1,85 @@
+<div class="container mt-5" style="background-image: '/Assets/student_img_col.jpg';">
+  
+  <!-- Input for student ID -->
+  <div  *ngIf="!student" class="card p-4">
+    <div class="card-body">
+      <h2 class="text-center">View Student</h2>
+
+      <label>Enter StudentID:</label>
+      <input [(ngModel)]="studentId" type="number" placeholder="Enter Student ID" />
+      <button (click)="onViewStudent()">View Student</button>
+    </div>
+  </div>
+
+  <!-- Display success or error messages -->
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <!-- Display student and marks information -->
+  <div *ngIf="student" class="card mt-4 p-4">
+    <h3>Student Details</h3>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Seat Number:</strong> {{ student.seatNo }}</p>
+    <p><strong>College:</strong> {{ student.college }}</p>
+    <p><strong>Course:</strong> {{ student.course }}</p>
+    <p><strong>Perm Reg No:</strong> {{ student.permRegNo }}</p>
+    <p><strong>Mother's Name:</strong> {{ student.motherName }}</p>
+
+    <h4>Marks</h4>
+    <div *ngIf="student.marklist && student.marklist.length > 0">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Internal Marks</th>
+            <th>External Marks</th>
+            <th>Total Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mark of student.marklist">
+            <td>{{ mark.subjectName }}</td>
+            <td>{{ mark.internalMarks }}</td>
+            <td>{{ mark.externalMarks }}</td>
+            <td>{{ mark.totalMarks }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="!student.marklist || student.marklist.length === 0">
+      <p>No marks available for this student.</p>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="container mt-5">
+  <h2 class="text-center">View Student</h2>
+
+  <div class="card p-4">
+    <h4>Enter Student ID:</h4>
+    <input type="number" class="form-control" [(ngModel)]="studentId" placeholder="Enter student ID" />
+    <button class="btn btn-primary mt-3" (click)="onViewStudent()">View Student</button>
+  </div>
+
+  <div *ngIf="student" class="card mt-4 p-4">
+    <h4>Student Information</h4>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Seat No:</strong> {{ student.seatNo }}</p>
+    <p><strong>College:</strong> {{ student.college }}</p>
+    <p><strong>Course:</strong> {{ student.course }}</p>
+    <p><strong>Center:</strong> {{ student.center }}</p>
+    <p><strong>Perm Reg No:</strong> {{ student.permRegNo }}</p>
+    <p><strong>Mother's Name:</strong> {{ student.motherName }}</p>
+
+    <div *ngFor="let mark of student.marks; let i = index" class="mb-3">
+      
+      <p><strong>Subject:</strong> {{ mark.subjectName }}</p>
+      <p><strong>Internal Marks:</strong> {{ mark.internalMarks }}</p>
+      <p><strong>External Marks:</strong> {{ mark.externalMarks }}</p>
+      <p><strong>Total Marks:</strong> {{ mark.totalMarks }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</div>   -->

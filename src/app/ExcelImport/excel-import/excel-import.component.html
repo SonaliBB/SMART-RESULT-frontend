@@ -1,0 +1,19 @@
+<div class="home-container">
+<div class="upload-container card">
+  <h2 class="upload-title inp">📂 Upload Excel File</h2>
+  <form>
+    <div class="file-input-container">
+      <input
+        type="file"
+        (change)="onFileSelected($event)"
+        accept=".xlsx,.xls"
+        class="file-input"
+      />
+    </div>
+    <button type="button" (click)="onUpload()" class="upload-btn">
+      🚀 Upload
+    </button>
+  </form>
+  <p class="upload-message">{{ uploadMessage }}</p>
+</div>
+</div>

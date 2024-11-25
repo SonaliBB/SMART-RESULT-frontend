@@ -1,0 +1,94 @@
+/* Upload Container Styling */
+
+
+/* Home Container Styling */
+.home-container {
+  background-image: url('http://localhost:4200/Assets/student_img_col.jpg');
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  height: 100vh; /* Full viewport height */
+  justify-content: center; /* Center items vertically */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Ensures it covers the full viewport */
+  position: relative; /* Allow for layering and positioning */
+  overflow: hidden;
+}
+
+/* Upload Container Styling (Right-Aligned) */
+.upload-container {
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(26, 29, 61, 0.85); /* Semi-transparent dark background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+
+  /* Positioning to the right */
+  position: absolute;
+  right: 7%; /* Adjust as needed for spacing from the right edge */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+
+/* Title Styling */
+.upload-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1da3b8;
+  margin-bottom: 20px;
+}
+
+/* File Input Styling */
+.file-input-container {
+  margin-bottom: 15px;
+}
+
+.file-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed #336cdf;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  outline: none;
+  transition: 0.3s ease;
+  color: #555;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.file-input:hover {
+  border-color: #260685;
+  background-color: #9dc7ef;
+}
+
+/* Button Styling */
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(145deg, #0478c5, #97e5f9);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 0.6);
+  transition: 0.3s ease;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(145deg, #1738c8, #b4bdf3);
+  transform: translateY(-1px);
+}
+
+/* Upload Message Styling */
+.upload-message {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #33bae0;
+  font-weight: bold;
+}

@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container {
+  flex: 1; 
+  padding: 20px;
+}
+
+
+.footer {
+  background-color: rgb(120, 3, 65);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  bottom: 0; 
+  color: white;
+}

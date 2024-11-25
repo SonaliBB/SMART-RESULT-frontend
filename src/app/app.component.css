@@ -1,0 +1,266 @@
+
+/* Ensure the navbar stays fixed at the top */
+.navbar {
+  position: relative; /* Fix the navbar at the top */
+  top: 0; /* Set to top of the page */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make the navbar take the full width of the page */
+  z-index: 1000; /* Ensure the navbar stays above all other content */
+  background-color:black; /* This is your bg-custom color */
+  padding: 10px 0; /* Adjust padding for the navbar */
+}
+
+/* Add some space at the top of the body to prevent content from being hidden behind the fixed navbar */
+body {
+  padding-top: 60px; /* Adjust according to the navbar height */
+}
+
+/* Styling for the navbar items */
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  color: black;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  background-color: #ff6347; /* Change color on hover */
+  text-decoration: underline;
+}
+
+/* Optional: Styling for active links */
+.nav-link.active {
+  color: #ff6347; /* Change color of active link */
+  text-decoration: underline;
+}
+
+.footer{
+  background-color:black ;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bg-custom {
+  background-color: black; /* Apply the desired color */
+}
+a{
+font-weight: bold;
+color: white;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-weight: normal; /* Reduced font weight for a softer look */
+  font-size: 0.875rem; 
+}
+
+.footer a:hover {
+  color: #ff6347;  /* Example: change to a warm color on hover */
+  text-decoration: underline;
+}
+
+.footer .social-icons i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+  transform: scale(1.1); /* Slightly increase icon size on hover */
+}
+.footer .social-icons a {
+  font-size: 20px; /* Icon size adjustment */
+}
+
+.footer .social-icons li {
+  margin-right: 15px; /* Less space between icons */
+}
+
+.footer h5 {
+  font-size: 0.95rem; /* Slightly smaller headings */
+  margin-bottom: 5px;
+}
+
+.footer ul li {
+  font-size: 0.875rem; /* Smaller text for list items */
+  margin-bottom: 5px; 
+}
+
+
+
+/* new */
+
+/* Style for the navbar item */
+.navbar-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-item:hover .pdf-download-card {
+  display: block;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card label, .card input, .card button {
+  font-size: 0.9rem;
+}
+
+.card input {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.card button {
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+/* Navbar item container */
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+
+
+/* Main card container */
+.pdf-download-card {
+  position: absolute;
+  top: 100%; /* Position below navbar item */
+  left: 0;
+  width: 300px; /* Card width */
+  padding: 20px;
+  background-color: rgba(26, 29, 61, 0.85); /* Soft white with slight transparency */
+  border-radius: 10px;
+  display: none; /* Hidden by default */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px); /* Slide-in effect */
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Show the PDF card when hovering over the 'PDF-DOWNLOAD' nav item */
+.nav-item:hover .pdf-download-card {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Content layout for card */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Spacing between elements */
+}
+
+/* Label styling */
+.pdf-download-card label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color:white;
+  text-align: left;
+  width: 100%;
+}
+
+/* Input field styling */
+.pdf-download-card input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #007bff; /* Subtle border color */
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Light gray background */
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus state for input */
+.pdf-download-card input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow effect */
+  outline: none;
+}
+
+/* Button styling */
+.pdf-download-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for button */
+.pdf-download-card button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Button active effect */
+.pdf-download-card button:active {
+  transform: translateY(1px); /* Subtle click effect */
+}
+
+
+
+/* new */
+/* Style for the Excel download button to match navbar items */
+.navbar-nav .nav-item button {
+  color: rgba(231, 228, 228, 0.515); /* Make button text white */
+  background-color: transparent; /* Ensure background is transparent */
+  font-weight: bold; /* Match font weight */
+  text-transform: uppercase; /* Match text transformation */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Match the padding of other nav links */
+  cursor: pointer; /* Indicate clickable button */
+  display: inline-block; /* Ensure the button aligns with other nav items */
+}
+
+/* Add hover effect to button */
+.navbar-nav .nav-item button:hover {
+  background-color: #ff6347; /* Matching hover color */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Style for active state */
+.navbar-nav .nav-item button.active {
+  color: #ff6347; /* Change color on active state */
+  text-decoration: underline;
+}
+

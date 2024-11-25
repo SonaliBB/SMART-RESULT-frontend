@@ -1,0 +1,80 @@
+/* Full-page container for centering the form */
+.delete-student-container {
+  display: flex;
+  flex-direction: column;
+  background-image: url('http://localhost:4200/Assets/stud_img.jpg');
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #b0bac5; /* Light gray background */
+}
+
+/* Card styling */
+form {
+  background-color: rgb(162, 223, 249);
+  border: 1px solid #086dd1; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Space inside the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px; /* Limit width */
+}
+
+/* Header styling */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40; /* Darker text */
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #495057; /* Neutral text color */
+}
+
+input.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is within width */
+}
+
+/* Button styling */
+button.btn {
+  width: 100%; /* Full-width button */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-danger {
+  background-color: #a3bbc5; /* Danger red */
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #4ed0f8; /* Darker red on hover */
+}
+
+/* Message styling */
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #155724;
+  background-color: #d4edda; /* Light green for success */
+  border: 1px solid #c3e6cb; /* Green border */
+}

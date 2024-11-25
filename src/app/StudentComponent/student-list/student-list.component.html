@@ -1,0 +1,79 @@
+<!-- Main Background Container -->
+<div class="home-page">
+  <!-- Centered Content Card -->
+  <div class="card student-list-card">
+    <h2 class="table-title">📋 Student List</h2>
+
+    <!-- Student Data Table -->
+    <table mat-table [dataSource]="students" class="student-table mat-elevation-z8">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="table-header">ID</th>
+        <td mat-cell *matCellDef="let student" class="table-data">{{ student.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Name</th>
+        <td mat-cell *matCellDef="let student" class="table-data">{{ student.name }}</td>
+      </ng-container>
+
+      <!-- Seat No Column -->
+      <ng-container matColumnDef="seatNo">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Seat No</th>
+        <td mat-cell *matCellDef="let student" class="table-data">{{ student.seatNo }}</td>
+      </ng-container>
+
+      <!-- College Column -->
+      <ng-container matColumnDef="college">
+        <th mat-header-cell *matHeaderCellDef class="table-header">College</th>
+        <td mat-cell *matCellDef="let student" class="table-data">{{ student.college }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="table-header">Actions</th>
+        <td mat-cell *matCellDef="let student" class="table-data">
+          <div class="button-group">
+            <!-- View Marks Button -->
+            <button mat-raised-button color="primary" class="action-btn action-btn-primary" (click)="view(student)">
+              <img src="https://img.icons8.com/ios-filled/50/000000/visible.png" alt="View Icon" class="button-logo" />
+              View Marks
+            </button>
+        
+            <!-- Update Student Button -->
+            <button mat-raised-button color="accent" class="action-btn action-btn-accent" (click)="updateStudent(student)">
+              <img src="https://img.icons8.com/ios-filled/50/000000/edit--v1.png" alt="Update Icon" class="button-logo" />
+              Update
+            </button>
+        
+            <!-- Delete Student Button -->
+            <button mat-raised-button color="warn" class="action-btn action-btn-warn" (click)="deleteStudent(student)">
+              <img src="https://img.icons8.com/ios-filled/50/000000/trash.png" alt="Delete Icon" class="button-logo" />
+              Delete
+            </button>
+        
+            <!-- Download PDF Button -->
+            <button mat-raised-button color="primary" class="action-btn action-btn-download" (click)="navigateToDownloadPdf(student.id)">
+              <img src="https://img.icons8.com/color/50/000000/pdf.png" alt="PDF Icon" class="button-logo" />
+              Get PDF
+            </button>
+          </div>
+        </td>
+        
+      </ng-container>
+
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="['id', 'name', 'seatNo', 'college', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'seatNo', 'college', 'actions']"></tr>
+    </table>
+
+    <!-- Pagination Controls -->
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      (page)="handlePageEvent($event)">
+    </mat-paginator>
+  </div>
+</div>
