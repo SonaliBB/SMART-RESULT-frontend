@@ -35,7 +35,6 @@ export class StudentListComponent implements OnInit {
   selectedStudent!:Student;
 
   constructor(private studentService: StudentService,private router:Router) {}
-
   ngOnInit(): void {
     this.loadAllStudents();
   }

@@ -12,18 +12,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class PdfDownloadComponent {
   studentId: string = '';  // Store the student ID input from the user
-  private baseUrl = 'http://localhost:8091/api/pdf/getpdf/';
-
+  private baseUrl = 'http://localhost:8091/api/pdf/getpdf/';   
   constructor(private http: HttpClient) {}
-
   downloadPdf() {
     if (!this.studentId) {
-      console.log("Student ID is required.");
+      console.log("Student ID is required.");  
       return;
-    }
-
+    } 
     const apiUrl = `${this.baseUrl}${this.studentId}`;  // Construct URL based on student ID
-
     this.http.get(apiUrl, {
       responseType: 'blob',
       headers: new HttpHeaders().set('Accept', 'application/pdf')
